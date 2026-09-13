@@ -1,17 +1,55 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import faisalVanImg from '../assets/Faisal-Van.jpg';
+import NextDoorLogo from '../components/icons/NextDoorLogo.astro';
+import MyJobQuoteIcon from '../components/icons/MyJobQuoteIcon.astro';
+import { siteInfo } from '../data/siteInfo';
+import style from '../styles/global.css'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="F&B Painting & Decorating | Professional Decorators Wirral & Liverpool"
+  description="High-finish interior & exterior painting, decorating, and property repairs across Wirral, Liverpool, Chester, and Ellesmere Port. Contact us for 100% free quotes."
+>
+
+  <!-- Main Section -->
+<section class="main-section">
+  <div class="container main-grid">
+    <div class="main-copy">
+      <span class="badge-location">Serving Wirral, Liverpool and Chester</span>
+      <h1>Reliable Painting and Decorating Done Right</h1>
+      <p class="main-subtitle">
+        Quality interior and exterior finishes, wallpapering, and reliable property repairs.
+        Prompt service, spotless clean-up, and zero-obligation pricing.
+      </p>
+
+    <div class="cta-group">
+      <a href={`tel:${siteInfo.phone}`} class="btn btn-primary">
+        Call for a Free quotes
+        </a>
+      <a href="/services" class="btn btn-outline">
+        Our services
+      </a>
+      </div>
+
+      <p class="direct-contact">
+        Or call directly: <a href={`tel:${siteInfo.phone}`}>{siteInfo.phone}</a>
+      </p>
+    </div>
+
+    <div class="main-media">
+      <div class="image-frame">
+        <Image
+          src={faisalVanImg}
+          alt="Owner standing proudly with the F&B painting and decorating van"
+          width={580}
+          height={580}
+          quality="high"
+          loading="eager"
+          class="main-image"
+        />
+    </div>
+    </div>
+  </div>
+</section>
