@@ -1,7 +1,13 @@
 --- 
 import Navigation from "./Navigation.astro";
+import { siteInfo } from '../data/siteInfo.ts';
+import { Image } from 'astro:assets';
+import logoImg from '../assets/FB_logo_transparent.png';
 --- 
 <header>
-  <img src="/public/fd_logo.png" alt="F&B Painting and Decorating Services logo" />
+  <a href="/">
+    <Image src={logoImg} alt="F&B Painting & Decorating Services" width={120} />
+  </a>
   <Navigation />
+  <a href={`tel:${siteInfo.phone.replace(/\s+/g, '')}`}>Call Now</a>
 </header>
