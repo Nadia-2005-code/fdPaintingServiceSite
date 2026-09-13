@@ -5,51 +5,449 @@ import faisalVanImg from '../assets/Faisal-Van.jpg';
 import NextDoorLogo from '../components/icons/NextDoorLogo.astro';
 import MyJobQuoteIcon from '../components/icons/MyJobQuoteIcon.astro';
 import { siteInfo } from '../data/siteInfo';
-import style from '../styles/global.css'
 ---
 
 <BaseLayout
   title="F&B Painting & Decorating | Professional Decorators Wirral & Liverpool"
   description="High-finish interior & exterior painting, decorating, and property repairs across Wirral, Liverpool, Chester, and Ellesmere Port. Contact us for 100% free quotes."
 >
-
   <!-- Main Section -->
-<section class="main-section">
-  <div class="container main-grid">
-    <div class="main-copy">
-      <span class="badge-location">Serving Wirral, Liverpool and Chester</span>
-      <h1>Reliable Painting and Decorating Done Right</h1>
-      <p class="main-subtitle">
-        Quality interior and exterior finishes, wallpapering, and reliable property repairs.
-        Prompt service, spotless clean-up, and zero-obligation pricing.
-      </p>
+  <section class="main-section">
+    <div class="container main-grid">
+      <div class="main-copy">
+        <span class="badge-location">Serving Wirral, Liverpool and Chester</span>
+        <h1>Reliable Painting and Decorating Done Right</h1>
+        <p class="main-subtitle">
+          Quality interior and exterior finishes, wallpapering, and reliable property repairs.
+          Prompt service, spotless clean-up, and zero-obligation pricing.
+        </p>
 
-    <div class="cta-group">
-      <a href={`tel:${siteInfo.phone}`} class="btn btn-primary">
-        Call for a Free quotes
-        </a>
-      <a href="/services" class="btn btn-outline">
-        Our services
-      </a>
+        <div class="cta-group">
+          <a href={`tel:${siteInfo.phone}`} class="btn btn-primary">
+            Call for a Free quote
+          </a>
+          <a href="/services" class="btn btn-outline">
+            Our services
+          </a>
+        </div>
+
+        <p class="direct-contact">
+          Or call directly: <a href={`tel:${siteInfo.phone}`}>{siteInfo.phone}</a>
+        </p>
       </div>
 
-      <p class="direct-contact">
-        Or call directly: <a href={`tel:${siteInfo.phone}`}>{siteInfo.phone}</a>
-      </p>
+      <div class="main-media">
+        <div class="image-frame">
+          <Image
+            src={faisalVanImg}
+            alt="Owner standing proudly with the F&B painting and decorating van"
+            width={580}
+            height={580}
+            quality="high"
+            loading="eager"
+            class="main-image"
+          />
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="main-media">
-      <div class="image-frame">
-        <Image
-          src={faisalVanImg}
-          alt="Owner standing proudly with the F&B painting and decorating van"
-          width={580}
-          height={580}
-          quality="high"
-          loading="eager"
-          class="main-image"
-        />
+  <!-- Trust Section -->
+  <section class="trust-bar">
+    <div class="container trust-grid">
+      <a
+        href={siteInfo.socials.nextdoor}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="trust-card"
+      >
+        <NextDoorLogo class="h-6 w-auto" />
+        <div class="trust-meta">
+          <span class="stars">★★★★★</span>
+          <span class="trust-label"><strong>5-Star Rated</strong> on Nextdoor</span>
+        </div>
+      </a>
+
+      <a
+        href={siteInfo.socials.myjobquote}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="trust-card"
+      >
+        <MyJobQuoteIcon size={28} />
+        <div class="trust-meta">
+          <span class="trust-tag">Verified Member</span>
+          <span class="trust-label"><strong>Direct Profile</strong> on MyJobQuote</span>
+        </div>
+      </a>
+
+      <div class="trust-card commitment-pill">
+        <span class="check-icon">✔</span>
+        <span>Quality Work • Reliable Service • Competitive Prices</span>
+      </div>
     </div>
+  </section>
+  <!-- Core Service Preview -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What We Do</h2>
+        <p>Comprehensive domestic and commercial trade solutions tailored to your home.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h3>Interior Painting</h3>
+          <p>Feature walls, full rooms, woodwork, doors, and ceilings finished with meticulous prep work and dust protection.</p>
+          <a href="/services" class="card-link">Learn more &rarr;</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h3>Exterior Decorating</h3>
+          <p>Weather-proof masonry coatings, window frames, fascias, and exterior woodwork built to withstand the seasons.</p>
+          <a href="/services" class="card-link">Learn more &rarr;</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h3>Property Repairs</h3>
+          <p>Plaster patching, caulking, minor wall repairs, and reliable turnkey maintenance for homeowners and local landlords.</p>
+          <a href="/services" class="card-link">Learn more &rarr;</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Why choose F&B -->
+  <section class="why-us-section">
+    <div class="container why-grid">
+      <div class="why-copy">
+        <h2>Why Work with Faisal?</h2>
+        <p>Hiring a decorator shouldn't come with stress, mess, or vague pricing. We treat every property with respect from day one.</p>
+      </div>
+
+      <div class="perks-list">
+        <div class="perk-item">
+          <h4>Spotless Clean-up</h4>
+          <p>Every work area is fully protected with dust sheets and clean edge masking, left tidy at the end of each day.</p>
+        </div>
+        <div class="perk-item">
+          <h4>Clear, Fixed Quotes</h4>
+          <p>Zero hidden surprises or unexpected extra charges without prior agreement. All quotes valid for 14 days.</p>
+        </div>
+        <div class="perk-item">
+          <h4>Reliable & Accountable</h4>
+          <p>Prompt morning arrivals, direct phone communication, and personal accountability on every job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Main / Hero Section */
+  .main-section {
+    padding: 4rem 0 3rem;
+    background-color: var(--surface);
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .main-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      padding: 2rem 0;
+    }
+  }
+
+  .badge-location {
+    display: inline-block;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+  }
+
+  .main-copy h1 {
+    font-size: 2.75rem;
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .main-copy h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+  .main-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 2px solid var(--primary);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--dark);
+    border: 2px solid var(--border);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--dark);
+  }
+
+  .direct-contact {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .direct-contact a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .direct-contact a:hover {
+    text-decoration: underline;
+  }
+
+  .image-frame {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border);
+  }
+
+  .main-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Trust Section */
+  .trust-bar {
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+
+  .trust-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .trust-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+    color: var(--text-main);
+  }
+
+  .trust-meta {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+  }
+
+  .stars {
+    color: var(--accent);
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .trust-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .commitment-pill {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .check-icon {
+    color: var(--primary);
+    font-weight: bold;
+  }
+
+  /* Services Preview */
+  .services-section {
+    padding: 5rem 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.75rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2.25rem 2rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+  }
+
+  .service-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.75rem;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .card-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Why Choose */
+  .why-us-section {
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border);
+    padding: 5rem 0;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .why-grid {
+      grid-template-columns: 1fr 1.5fr;
+      align-items: start;
+    }
+  }
+
+  .why-copy h2 {
+    font-size: 2.75rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .why-copy p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .perks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .perk-item h4 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 0.35rem;
+  }
+
+  .perk-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>
