@@ -1,13 +1,99 @@
---- 
-import Navigation from "./Navigation.astro";
-import { siteInfo } from '../data/siteInfo.ts';
+---
+import { siteInfo } from '../data/siteInfo';
+import Navigation from './Navigation.astro';
 import { Image } from 'astro:assets';
 import logoImg from '../assets/FB_logo_transparent.png';
---- 
-<header>
-  <a href="/">
-    <Image src={logoImg} alt="F&B Painting & Decorating Services" width={120} />
-  </a>
-  <Navigation />
-  <a href={`tel:${siteInfo.phone.replace(/\s+/g, '')}`}>Call Now</a>
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand-link" aria-label="F&B Painting & Decorating Home">
+      <Image 
+        src={logoImg} 
+        alt="F&B Painting & Decorating Services" 
+        height={90}
+        quality="max"
+        class="brand-logo"
+      />
+    </a>
+
+    <Navigation />
+
+    <div class="header-action">
+      <a href={`tel:${siteInfo.phone}`} class="btn-call">
+        <span class="call-label">Call Now: </span>
+        <span class="call-number">{siteInfo.phone}</span>
+      </a>
+    </div>
+  </div>
 </header>
+
+<style>
+  .site-header {
+    background-color: var(--dark);
+    border-bottom: 3px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px; /* Explicit compact header height */
+    padding: 0;   /* Let flex centering handle vertical alignment */
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+  }
+
+  .brand-logo {
+    height: 68px; /* Fills vertical space cleanly leaving 8px padding top/bottom */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  }
+
+  @media (min-width: 768px) {
+    .brand-logo {
+      height: 70px;
+    }
+  }
+
+  .btn-call {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
+    background-color: var(--primary);
+    padding: 0.45rem 1.15rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .btn-call:hover {
+    background-color: var(--primary-dark);
+  }
+
+  .call-label {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+
+  .call-number {
+    font-size: 0.75rem;
+    color: #e0f2fe;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+</style>

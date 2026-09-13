@@ -1,6 +1,26 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/about/">About Us</a>
-  <a href="/services/">Services</a>
-  <a href="/gallery/">Portfolio</a>
-</nav>
+<style>
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #e2e8f0; /* Crisp light contrast */
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-light, #00c8ff);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
