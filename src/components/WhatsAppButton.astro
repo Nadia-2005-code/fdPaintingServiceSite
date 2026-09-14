@@ -1,0 +1,64 @@
+---
+import { siteInfo } from '../data/siteInfo';
+import WhatsAppIcon from './icons/WhatsAppIcon.astro';
+
+interface Props {
+  message: string;
+  buttonText: string;
+  class?: string;
+  iconSize?: number;
+}
+
+const { 
+  message, 
+  buttonText, 
+  class: className = '',
+  iconSize = 18
+} = Astro.props;
+
+const whatsappNumber = siteInfo.phone.replace(/^0/, '44').replace(/\s+/g, '');
+const encodedMessage = encodeURIComponent(message);
+---
+
+<a 
+  href={`https://wa.me/${whatsappNumber}?text=${encodedMessage}`} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class={`btn-whatsapp ${className}`}
+>
+  <WhatsAppIcon size={iconSize} />
+  <span>{buttonText}</span>
+</a>
+
+<style>
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    align-self: flex-start;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #25D366;
+    color: #ffffff !important;
+    border: none;
+    gap: 0.45rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .btn-whatsapp:hover {
+    background-color: #1DA851;
+    transform: translateY(-1px);
+  }
+
+  /* Large variant for the bottom CTA banner */
+  .btn-whatsapp.btn-large {
+    font-size: 1.05rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: 6px;
+    gap: 0.6rem;
+  }
+</style>

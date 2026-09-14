@@ -6,6 +6,7 @@ import { siteInfo } from '../data/siteInfo';
 import interiorImg from '../assets/service-interior.jpg';
 import exteriorImg from '../assets/service-exterior.jpg';
 import repairsImg from '../assets/service-repairs.jpg';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 
 const dialPhone = siteInfo.phone.replace(/\s+/g, '');
 ---
@@ -56,7 +57,10 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
             <li>Full floor and furniture masking with spotless daily tidy-up</li>
           </ul>
           <div class="service-actions">
-            <a href={`tel:${dialPhone}`} class="btn btn-primary">Get a Quote for Interior Work</a>
+            <WhatsAppButton 
+              buttonText="WhatsApp Us for an Interior Quote" 
+              message="Hi Faisal, I'm looking to get a quote for some interior decorating work." 
+            />
             <a href="/gallery" class="link-gallery">See more interior transformations &rarr;</a>
           </div>
         </div>
@@ -88,7 +92,10 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
             <li>Rot treatment and sealing before any topcoat is applied</li>
           </ul>
           <div class="service-actions">
-            <a href={`tel:${dialPhone}`} class="btn btn-primary">Get a Quote for Exterior Work</a>
+            <WhatsAppButton 
+              buttonText="WhatsApp Us for an Exterior Quote" 
+              message="Hi Faisal, I'm looking to get a quote for some exterior painting." 
+            />
             <a href="/gallery" class="link-gallery">See more exterior transformations &rarr;</a>
           </div>
         </div>
@@ -119,7 +126,10 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
             <li>Turnkey rental repairs and end-of-tenancy refreshes for landlords</li>
           </ul>
           <div class="service-actions">
-            <a href={`tel:${dialPhone}`} class="btn btn-primary">Request Repair Assistance</a>
+            <WhatsAppButton 
+              buttonText="WhatsApp Us for a Repairs Quote" 
+              message="Hi Faisal, I'm looking to get a quote for some property maintenance/repairs." 
+            />
             <a href="/gallery" class="link-gallery">See more repair transformations &rarr;</a>
           </div>
         </div>
@@ -517,3 +527,4 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     }
   </style>
 </BaseLayout>
+

@@ -1,33 +1,25 @@
 ---
 import { siteInfo } from '../data/siteInfo';
+import WhatsAppIcon from './icons/WhatsAppIcon.astro';
+import InstagramIcon from './icons/InstagramIcon.astro';
+import FacebookIcon from './icons/FacebookIcon.astro';
+import MyJobQuoteIcon from './icons/MyJobQuoteIcon.astro';
 
 const dialPhone = siteInfo.phone.replace(/\s+/g, '');
+const whatsappNumber = siteInfo.phone.replace(/^0/, '44').replace(/\s+/g, '');
+const whatsappMsg = encodeURIComponent("Hi Faisal, I'd like to get a quote for a job.");
 ---
 
 <footer class="site-footer">
   <!-- Asymmetrical Paint Pour / Roller Edge -->
   <div class="brush-edge-top" aria-hidden="true">
     <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
-      <!-- Blue Base Accent Layer -->
       <path 
-        d="M0,0 
-           L0,22 
-           C180,22 260,54 380,54 
-           C490,54 540,16 680,16 
-           C800,16 860,42 960,42 
-           C1060,42 1120,8 1200,6 
-           L1200,60 L0,60 Z" 
+        d="M0,0 L0,22 C180,22 260,54 380,54 C490,54 540,16 680,16 C800,16 860,42 960,42 C1060,42 1120,8 1200,6 L1200,60 L0,60 Z" 
         fill="var(--primary)"
       ></path>
-      <!-- Main Dark Paint Layer -->
       <path 
-        d="M0,0 
-           L0,18 
-           C180,18 260,50 380,50 
-           C490,50 540,12 680,12 
-           C800,12 860,38 960,38 
-           C1060,38 1120,4 1200,2 
-           L1200,60 L0,60 Z" 
+        d="M0,0 L0,18 C180,18 260,50 380,50 C490,50 540,12 680,12 C800,12 860,38 960,38 C1060,38 1120,4 1200,2 L1200,60 L0,60 Z" 
         fill="var(--dark)"
       ></path>
     </svg>
@@ -48,10 +40,24 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
       <div class="footer-contact">
         <h4>Get in Touch</h4>
         <div class="contact-list">
+          <!-- Call -->
           <a href={`tel:${dialPhone}`} class="contact-item">
             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <span>{siteInfo.phone}</span>
           </a>
+
+          <!-- WhatsApp Chat -->
+          <a 
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="contact-item whatsapp-link"
+          >
+            <WhatsAppIcon size={16} />
+            <span>WhatsApp (Send Photos)</span>
+          </a>
+
+          <!-- Email -->
           <a href={`mailto:${siteInfo.email}`} class="contact-item">
             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             <span>{siteInfo.email}</span>
@@ -59,13 +65,24 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
         </div>
 
         <div class="social-list">
-          <a href={siteInfo.socials.nextdoor} target="_blank" rel="noopener noreferrer" class="social-item">Nextdoor</a>
+          <a href={siteInfo.socials.nextdoor} target="_blank" rel="noopener noreferrer" class="social-item hover-nd">
+            <span>Nextdoor</span>
+          </a>
           <span class="dot" aria-hidden="true">•</span>
-          <a href={siteInfo.socials.myjobquote} target="_blank" rel="noopener noreferrer" class="social-item">MyJobQuote</a>
+          <a href={siteInfo.socials.myjobquote} target="_blank" rel="noopener noreferrer" class="social-item hover-mjq">
+            <MyJobQuoteIcon size={16} />
+            <span>MyJobQuote</span>
+          </a>
           <span class="dot" aria-hidden="true">•</span>
-          <a href={siteInfo.socials.facebook} target="_blank" rel="noopener noreferrer" class="social-item">Facebook</a>
+          <a href={siteInfo.socials.facebook} target="_blank" rel="noopener noreferrer" class="social-item hover-fb">
+            <FacebookIcon size={15} />
+            <span>Facebook</span>
+          </a>
           <span class="dot" aria-hidden="true">•</span>
-          <a href={siteInfo.socials.instagram} target="_blank" rel="noopener noreferrer" class="social-item">Instagram</a>
+          <a href={siteInfo.socials.instagram} target="_blank" rel="noopener noreferrer" class="social-item hover-ig">
+            <InstagramIcon size={15} />
+            <span>Instagram</span>
+          </a>
         </div>
       </div>
     </div>
@@ -161,7 +178,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
   .contact-list {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.65rem;
     margin-bottom: 1.25rem;
   }
 
@@ -185,7 +202,10 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     color: var(--primary, #245ea7) !important;
   }
 
-  /* Override global.css img, svg { display: block; } */
+  .whatsapp-link:hover {
+    color: #25d366 !important;
+  }
+
   .contact-item svg {
     display: inline-block !important;
     flex-shrink: 0;
@@ -200,10 +220,13 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.65rem;
   }
 
   .social-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     color: #94a3b8 !important;
     text-decoration: none !important;
     font-size: 0.88rem;
@@ -225,5 +248,21 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     color: #475569;
     font-size: 0.75rem;
   }
-</style>
 
+  /* Social Link Brand Hovers */
+  .social-item.hover-nd:hover {
+    color: #006142 !important;
+  }
+  
+  .social-item.hover-mjq:hover {
+    color: #236bc8 !important;
+  }
+  
+  .social-item.hover-fb:hover {
+    color: #1877F2 !important;
+  }
+  
+  .social-item.hover-ig:hover {
+    color: #E1306C !important;
+  }
+</style>

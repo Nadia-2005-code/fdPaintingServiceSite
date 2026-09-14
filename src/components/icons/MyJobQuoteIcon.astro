@@ -4,7 +4,7 @@ interface Props {
   size?: number | string;
 }
 
-const { class: className = "w-6 h-6", size } = Astro.props;
+const { class: className = '', size = 16 } = Astro.props;
 ---
 
 <svg
@@ -15,15 +15,16 @@ const { class: className = "w-6 h-6", size } = Astro.props;
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   aria-hidden="true"
+  style="display: inline-block; vertical-align: middle;"
 >
   <g transform="translate(-66.906 -39.855)">
     <path
       d="m110.84 86.229 8.7252-8.7653 15.456 16.031-8.4333 8.1757zm-43.93-16.871 5.6967-5.3234 6.2781 0.36722-0.38141-8.1381 13.686-12.323 17.656-0.01245-10.909 12.232 12.214 12.619-9.1485 8.7975-11.85-11.74-7.6195 1.7976 0.15047 3.8608-6.2924 6.887z"
       fill="#236bc8"
-    />
+    ></path>
     <path
       d="m86.761 92.277 29.395-28.307c-1.6546-5.6301-3.0882-12.433 3.5374-19.058 3.6041-3.6472 13.116-7.2228 17.666-3.4464l-11.043 10.677 9.4623 8.8429 10.421-10.411c1.1461 1.381 4.0724 10.275-3.3086 18.183-4.9848 5.3409-11.466 5.3213-18.116 3.4531l-28.965 29.331z"
       fill="#fc2704"
-    />
+    ></path>
   </g>
 </svg>
