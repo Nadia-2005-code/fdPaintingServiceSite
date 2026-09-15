@@ -64,3 +64,61 @@ img, svg {
 }
 
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1.2;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Primary Filled Button */
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  border: 2px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Secondary Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--dark) !important;
+  border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+  background-color: var(--dark);
+  border-color: var(--dark);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* Large Sizing Modifier (Hero sections & CTA banners) */
+.btn-large {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .btn-large {
+    font-size: 1.2rem;
+    padding: 0.85rem 2rem;
+  }
+}

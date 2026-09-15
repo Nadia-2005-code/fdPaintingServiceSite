@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
-import { siteInfo } from '../data/siteInfo';
 
 import interiorImg from '../assets/service-interior.jpg';
 import exteriorImg from '../assets/service-exterior.jpg';
@@ -9,7 +8,6 @@ import repairsImg from '../assets/service-repairs.jpg';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 
-const dialPhone = siteInfo.phone.replace(/\s+/g, '');
 ---
 
 <BaseLayout
@@ -402,66 +400,6 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
       text-decoration: underline;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.05rem;
-      padding: 0.65rem 1.25rem;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
-      text-align: center;
-    }
-
-    @media (max-width: 639px) {
-      .service-actions .btn {
-        width: 100%;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .btn {
-        font-size: 1.15rem;
-        padding: 0.75rem 1.6rem;
-      }
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: #ffffff;
-      border: 2px solid var(--primary);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      color: var(--dark);
-      border: 2px solid var(--dark);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--dark);
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .btn-large {
-      font-size: 1.1rem;
-      padding: 0.75rem 1.5rem;
-    }
-
-    @media (min-width: 768px) {
-      .btn-large {
-        font-size: 1.25rem;
-        padding: 0.85rem 2rem;
-      }
-    }
   </style>
 </BaseLayout>
 
