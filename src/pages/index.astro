@@ -40,11 +40,14 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
           <Image
             src={faisalVanImg}
             alt="Owner standing proudly with the F&B painting and decorating van"
-            widths={[400, 800, 1200]}
-            sizes="(max-width: 768px) 100vw, 420px"
+            widths={[400, 500, 600, 800, 1200]}
+            sizes="(max-width: 768px) calc(100vw - 40px), 420px"
+            width={1200}
+            height={1200}
             quality="high"
             loading="eager"
             fetchpriority="high"
+            decoding="async"
             class="main-image"
           />
         </div>

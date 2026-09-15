@@ -78,10 +78,13 @@ const coverageTowns = [
             src={faisalVanImg}
             alt="Faisal standing with the official F&B Painting and Decorating van"
             fetchpriority="high"
-            widths={[400, 800, 1200]}
-            sizes="(max-width: 768px) 100vw, 420px"
+            widths={[400, 500, 600, 800, 1200]}
+            sizes="(max-width: 768px) calc(100vw - 40px), 420px"
+            width={1200}
+            height={1200}
             quality="high"
             loading="eager"
+            decoding="async"
             class="story-img"
           />
         </div>
