@@ -143,7 +143,7 @@ img, svg {
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-display: optional;
   src: url('/fonts/inter-v20-latin-500.woff2') format('woff2');
 }
@@ -151,7 +151,7 @@ img, svg {
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-display: optional;
   src: url('/fonts/inter-v20-latin-600.woff2') format('woff2');
 }
@@ -159,7 +159,7 @@ img, svg {
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-display: optional;
   src: url('/fonts/inter-v20-latin-700.woff2') format('woff2');
 }
