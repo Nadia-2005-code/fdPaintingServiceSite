@@ -52,7 +52,6 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
         <div class="bridge-copy">
           <span class="bridge-tag">Social Media</span>
           <h3>Want to see what we're working on right now?</h3>
-          <p>We upload live progress shots and before-and-after reels directly to our social channels.</p>
         </div>
         <div class="bridge-actions">
           <a
@@ -62,7 +61,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
             class="btn btn-bridge-ig"
           >
             <InstagramIcon size={18} />
-            <span>Follow on Instagram</span>
+            <span>Instagram</span>
           </a>
           <a
             href={siteInfo.socials.facebook}
@@ -71,7 +70,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
             class="btn btn-bridge-fb"
           >
             <FacebookIcon size={18} />
-            <span>Facebook Page</span>
+            <span>Facebook</span>
           </a>
         </div>
       </div>
@@ -90,8 +89,8 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
                 alt={item.alt}
                 width={650}
                 quality="high"
-                loading={index < 2 ? "eager" : "lazy"}
-                decoding={index < 2 ? "sync" : "async"}
+                loading={index < 1 ? "eager" : "lazy"}
+                decoding={index < 1 ? "sync" : "async"}
                 class="gallery-img"
               />
             </div>
@@ -111,7 +110,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
   /* Header */
   .gallery-hero {
     background-color: var(--surface);
-    padding: 2.5rem 0 1.75rem;
+    padding: 0.5rem 0 1.75rem;
     border-bottom: 1px solid var(--border);
     text-align: center;
   }
@@ -205,24 +204,35 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     margin: 0;
   }
 
+  /* 50/50 Grid Buttons */
   .bridge-actions {
-    display: flex;
-    gap: 0.65rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    width: 100%;
     flex-shrink: 0;
   }
 
- .btn-bridge-ig {
+  @media (min-width: 640px) {
+    .bridge-actions {
+      display: flex;
+      width: auto;
+    }
+  }
+
+  .btn-bridge-ig {
     background-color: var(--dark);
     color: #ffffff !important;
     border: none;
     font-size: 0.9rem;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 0.5rem;
     border-radius: 6px;
     gap: 0.45rem;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     transition: transform 0.1s ease;
   }
 
@@ -237,11 +247,13 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     border: 1px solid var(--border);
     font-size: 0.9rem;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 0.5rem;
     border-radius: 6px;
     gap: 0.45rem;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
   }
 
@@ -250,6 +262,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     border-color: #1877F2;
     color: #ffffff !important;
   }
+
   /* Grid Layout */
   .gallery-section {
     padding: 1.5rem 0 3.5rem;
@@ -362,41 +375,5 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     .card-caption span {
       font-size: 0.88rem;
     }
-  }
-
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.05rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
-  }
-
-  .btn-primary {
-    background-color: var(--primary);
-    color: #ffffff;
-    border: 2px solid var(--primary);
-  }
-
-  .btn-primary:hover {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-    transform: translateY(-1px);
-  }
-
-  .btn-outline {
-    background-color: transparent;
-    color: var(--dark);
-    border: 2px solid var(--border);
-  }
-
-  .btn-outline:hover {
-    border-color: var(--dark);
-    transform: translateY(-1px);
   }
 </style>

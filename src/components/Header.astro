@@ -13,7 +13,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
       <Image 
         src={logoImg} 
         alt="F&B Painting & Decorating Services" 
-        height={56}
+        height={80}
         quality="max"
         loading="eager"
         class="brand-logo"
@@ -91,14 +91,17 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
   }
 
   .brand-logo {
-    height: 44px;
+    height: 60px;
     width: auto;
     object-fit: contain;
+    transform: scale(1.35);
+    transform-origin: left center;
   }
 
   @media (min-width: 900px) {
     .brand-logo {
-      height: 52px;
+      height: 72px;
+      transform: scale(1.4);
     }
   }
 
