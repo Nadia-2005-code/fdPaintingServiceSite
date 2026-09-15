@@ -1,31 +1,36 @@
-# Astro Starter Kit: Minimal
+# F&B Painting & Decorating Services
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A lightning-fast, zero-JS static website built for F&B Painting & Decorating. 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This site is built with [Astro](https://astro.build/) and deployed on Cloudflare Pages. It is heavily optimized for local SEO, mobile performance, and accessibility, achieving a 100/100 Lighthouse score across all metrics.
 
-## 🚀 Project Structure
+## 🛠️ How to Update the Site
 
-Inside of your Astro project, you'll see the following folders and files:
+This project was built to be extremely easy to maintain without touching the core layout code.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### 1. Updating Contact Info & Socials
+All global business data is centralized in one file. If Faisal changes his phone number, email, or social links, you only need to update it here:
+👉 **`src/data/siteInfo.ts`**
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Updating this file will automatically update the Header, Footer, WhatsApp buttons, and SEO meta tags across the entire site.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### 2. Adding to the Gallery
+The Portfolio/Gallery page is fully automated. You do **not** need to write any HTML to add new photos.
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Drop a high-quality image (`.jpg`, `.png`, or `.webp`) into **`src/assets/gallery/`**.
+2. **Name the file what you want the caption to be.** Use dashes or underscores for spaces.
+   * *Example:* Naming a file `Exterior-timber-sash-window-restoration.jpg` will automatically generate a gallery card with the caption **"Exterior timber sash window restoration"** and apply the correct SEO `alt` text.
+3. Astro will automatically resize, compress, and convert the image to WebP during the next build.
 
-## 🧞 Commands
+## Tech Stack & Performance Notes
+
+* **Framework:** Astro (Static Site Generation)
+* **Styling:** Vanilla CSS (Scoped to components)
+* **JavaScript:** Zero client-side JS shipped to the browser (except for a tiny inline script for the mobile menu).
+* **Hosting:** Cloudflare Pages
+* **Assets:** `astro:assets` handles all image optimization and responsive sizing at build time.
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -35,9 +40,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
