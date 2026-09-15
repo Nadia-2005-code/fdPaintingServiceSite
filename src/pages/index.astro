@@ -270,22 +270,24 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     background-color: var(--bg-light);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
   }
 
   .trust-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
+    gap: 1.25rem;
   }
 
-  @media (min-width: 900px) {
-    .trust-grid {
-      flex-direction: row;
-      gap: 6rem;
-    }
+  @media (min-width: 768px) {
+  .trust-grid {
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+  }
+}
 
     .trust-card:nth-child(1) {
       justify-self: end;
