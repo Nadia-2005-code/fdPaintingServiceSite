@@ -44,6 +44,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
             sizes="(max-width: 768px) 380px, 580px"
             quality="high"
             loading="eager"
+            fetchpriority="high"
             class="main-image"
           />
         </div>
@@ -268,17 +269,17 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
   }
 
   .trust-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     align-items: center;
     justify-items: center;
   }
 
   @media (min-width: 900px) {
     .trust-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      flex-direction: row;
+      gap: 6rem;
     }
 
     .trust-card:nth-child(1) {
