@@ -1,0 +1,148 @@
+---
+import { siteInfo } from '../data/siteInfo';
+import InstagramIcon from './icons/InstagramIcon.astro';
+import TestimonialCard from './TestimonialCard.astro';
+
+const testimonials = [
+  {
+    author: "Martin H.",
+    location: "Pensby",
+    source: "Nextdoor",
+    quote: "He painted the outside front of my house today & his quality of workmanship was outstanding. Arrived before 08:00 and didn't leave until after 17:30. He was very methodical in ensuring all areas of the wall were fully prepared prior to painting, and was also more than happy to answer any questions I had."
+  },
+  {
+    author: "Angela Reid",
+    location: "Dibbinsdale",
+    source: "Nextdoor",
+    quote: "If you need any painting /decorating then please ask this company. Workmanship second to none. Wouldn't have any one else now. F&B Painting & Decorating Services."
+  },
+  {
+    author: "Louise Houghton",
+    location: "Bromborough Pool",
+    source: "Nextdoor",
+    quote: "He was extremely polite and professional from start to finish, arrived right on time, and did an excellent job. The quality of his work is spot on and everything was done efficiently and with care. If you're looking for someone reliable who takes pride in their work, Faisal is definitely the one."
+  }
+];
+---
+
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Our Clients Say</h2>
+      <p>Verified recommendations from local homeowners across Wirral and Merseyside.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      {testimonials.map((t) => (
+        <TestimonialCard 
+          author={t.author}
+          location={t.location}
+          source={t.source}
+          quote={t.quote}
+        />
+      ))}
+    </div>
+
+    <div class="testimonials-footer">
+      <a 
+        href={siteInfo.socials.instagram} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="instagram-proof-link"
+      >
+        <InstagramIcon size={18} />
+        <span>See more client recommendations on our Instagram &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 3.5rem 0 4rem;
+    background-color: var(--bg-light, #f8fafc);
+    border-top: 1px solid var(--border, #e2e8f0);
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-section {
+      padding: 5rem 0;
+    }
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-header {
+      margin: 0 auto 3.5rem;
+    }
+  }
+
+  .section-header h2 {
+    font-size: 2.25rem;
+    color: var(--dark, #12151a);
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-header h2 {
+      font-size: 2.85rem;
+    }
+  }
+
+  .section-header p {
+    color: var(--text-muted, #64748b);
+    font-size: 1.05rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-header p {
+      font-size: 1.15rem;
+    }
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .testimonials-footer {
+    margin-top: 2.25rem;
+    text-align: center;
+  }
+
+  .instagram-proof-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary, #245ea7) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background-color: var(--surface, #ffffff);
+    border: 1px solid var(--border, #e2e8f0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .instagram-proof-link:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary, #245ea7);
+    color: var(--primary-dark, #1c4a85) !important;
+  }
+</style>
