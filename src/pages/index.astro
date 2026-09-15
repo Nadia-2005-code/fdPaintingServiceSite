@@ -40,8 +40,8 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
           <Image
             src={faisalVanImg}
             alt="Owner standing proudly with the F&B painting and decorating van"
-            width={580}
-            height={580}
+            widths={[400, 580]}
+            sizes="(max-width: 768px) 400px, 580px"
             quality="high"
             loading="eager"
             class="main-image"
@@ -133,15 +133,15 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
 
       <div class="perks-list">
         <div class="perk-item">
-          <h4>Spotless Clean-up</h4>
+          <h3>Spotless Clean-up</h3>
           <p>Every work area is fully protected with dust sheets and clean edge masking, left tidy at the end of each day.</p>
         </div>
         <div class="perk-item">
-          <h4>Clear, Fixed Quotes</h4>
+          <h3>Clear, Fixed Quotes<h3>
           <p>Zero hidden surprises or unexpected extra charges without prior agreement. All quotes valid for 14 days.</p>
         </div>
         <div class="perk-item">
-          <h4>Reliable & Accountable</h4>
+          <h3>Reliable & Accountable</h3>
           <p>Prompt morning arrivals, direct phone communication, and personal accountability on every job.</p>
         </div>
       </div>
@@ -553,14 +553,14 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
     }
   }
 
-  .perk-item h4 {
+  .perk-item h3 {
     font-size: 1.35rem;
     color: var(--dark);
     margin-bottom: 0.25rem;
   }
 
   @media (min-width: 768px) {
-    .perk-item h4 {
+    .perk-item h3 {
       font-size: 1.5rem;
       margin-bottom: 0.35rem;
     }

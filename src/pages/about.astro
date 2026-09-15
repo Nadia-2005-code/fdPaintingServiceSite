@@ -77,8 +77,9 @@ const coverageTowns = [
           <Image
             src={faisalVanImg}
             alt="Faisal standing with the official F&B Painting and Decorating van"
-            width={580}
-            height={580}
+            fetchpriority="high"
+            widths={[400, 580]}
+            sizes="(max-width: 768px) 400px, 580px"
             quality="high"
             loading="eager"
             class="story-img"
