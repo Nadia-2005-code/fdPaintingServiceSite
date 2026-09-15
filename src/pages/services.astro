@@ -7,6 +7,7 @@ import interiorImg from '../assets/service-interior.jpg';
 import exteriorImg from '../assets/service-exterior.jpg';
 import repairsImg from '../assets/service-repairs.jpg';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import CtaBanner from '../components/CtaBanner.astro';
 
 const dialPhone = siteInfo.phone.replace(/\s+/g, '');
 ---
@@ -139,20 +140,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
   </section>
 
   <!-- Bottom CTA Dual Button Strip -->
-  <section class="cta-banner">
-    <div class="container cta-inner">
-      <h2>Have a Project in Mind?</h2>
-      <p>All quotes are completely free, clear, and fixed for 14 days with zero obligation.</p>
-      <div class="cta-actions">
-        <a href={`tel:${dialPhone}`} class="btn btn-primary btn-large">
-          Call Now: {siteInfo.phone}
-        </a>
-        <a href={`mailto:${siteInfo.email}?subject=Quote%20Request`} class="btn btn-outline btn-large">
-          Email Us a Photo for a Quote
-        </a>
-      </div>
-    </div>
-  </section>
+  <CtaBanner />
 
   <style>
     /* Compact Page Hero & Quick-Nav Chips */
@@ -464,54 +452,6 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
       background-color: var(--dark);
       color: #ffffff;
       transform: translateY(-1px);
-    }
-
-    /* CTA Banner */
-    .cta-banner {
-      background-color: var(--surface);
-      padding: 2.5rem 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .cta-inner h2 {
-      font-size: 1.85rem;
-      color: var(--dark);
-      margin-bottom: 0.4rem;
-      line-height: 1.1;
-    }
-
-    .cta-inner p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    @media (min-width: 640px) {
-      .cta-actions {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.25rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .cta-banner {
-        padding: 5rem 0;
-      }
-      .cta-inner h2 {
-        font-size: 2.75rem;
-      }
-      .cta-inner p {
-        font-size: 1.15rem;
-        margin-bottom: 2rem;
-      }
     }
 
     .btn-large {
