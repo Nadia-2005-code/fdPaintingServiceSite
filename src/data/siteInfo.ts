@@ -11,7 +11,7 @@ export const siteInfo = {
     facebook: "https://facebook.com/fandbpaintingdecorating",
     nextdoor: "https://nextdoor.co.uk/page/fb-painting-decorating-services/",
     myjobquote: "https://myjobquote.co.uk/t/fb-painting-decorating-services",
-    google: "https://g.page/r/"
+    google: "https://g.page/r/CaXE9IakHkMeEBM/review"
   },
   coverage: ["Wirral", "Liverpool", "Chester", "Ellesmere Port"],
 };
