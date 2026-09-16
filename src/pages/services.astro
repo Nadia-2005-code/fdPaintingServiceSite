@@ -38,8 +38,11 @@ import CtaBanner from '../components/CtaBanner.astro';
             alt="Before and after transformation of an interior staircase and hallway"
             width={600}
             height={600}
+            widths={[320, 600]}
+            sizes="(max-width: 768px) 320px, 600px"
             quality="high"
             loading="eager"
+            fetchpriority="high"
             class="service-img"
           />
         </div>
@@ -72,6 +75,8 @@ import CtaBanner from '../components/CtaBanner.astro';
             alt="Before and after restoration of a traditional timber sash window"
             width={600}
             height={600}
+            widths={[320, 600]}
+            sizes="(max-width: 768px) 320px, 600px"
             quality="high"
             class="service-img"
           />
@@ -105,7 +110,10 @@ import CtaBanner from '../components/CtaBanner.astro';
             alt="Before and after ceiling gouge repair and plaster patching"
             width={600}
             height={600}
+            widths={[320, 600]}
+            sizes="(max-width: 768px) 320px, 600px"
             quality="high"
+            loading="lazy"
             class="service-img"
           />
         </div>
