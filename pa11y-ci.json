@@ -1,0 +1,9 @@
+{
+  "urls": [
+    "http://localhost:4321/",
+    "http://localhost:4321/about",
+    "http://localhost:4321/services",
+    "http://localhost:4321/gallery",
+    "http://localhost:4321/contact"
+  ]
+}
