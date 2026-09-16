@@ -16,7 +16,7 @@ const {
   image = "/og-image.jpg",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://fbpaintinganddecorating.co.uk");
+const canonicalURL = new URL(Astro.url.pathname.replace(/\/$/, ''), Astro.site ?? "https://fbpaintinganddecorating.co.uk");
 ---
 
 <html lang="en">
@@ -31,6 +31,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://fbpainti
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#245ea7" />
+
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
@@ -50,7 +52,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://fbpainti
     <link rel="preload" href="/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/inter-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Script to establish Local Business Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "F&B Painting & Decorating Services",
+      "image": "https://fbpaintinganddecorating.co.uk/og-image.jpg",
+      "telephone": "07418 064988",
+      "email": "fandbpaintingdecorating@gmail.com",
+      "url": "https://fbpaintinganddecorating.co.uk",
+      "areaServed": ["Wirral", "Liverpool", "Chester", "Ellesmere Port"],
+      "priceRange": "££"
+    })} />
   </head>
   <body>
     <Header />

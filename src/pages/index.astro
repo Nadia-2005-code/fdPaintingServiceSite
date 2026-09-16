@@ -7,7 +7,6 @@ import MyJobQuoteIcon from '../components/icons/MyJobQuoteIcon.astro';
 import { siteInfo } from '../data/siteInfo';
 import TestimonialsSection from '../components/TestimonialsSection.astro';
 
-const dialPhone = siteInfo.phone.replace(/\s+/g, '');
 ---
 
 <BaseLayout
@@ -26,7 +25,7 @@ const dialPhone = siteInfo.phone.replace(/\s+/g, '');
         </p>
 
         <div class="cta-group">
-          <a href={`tel:${dialPhone}`} class="btn btn-primary">
+          <a href={`tel:${siteInfo.phoneRaw}`} class="btn btn-primary">
             Call for a Free Quote
           </a>
           <a href="/services" class="btn btn-outline">
