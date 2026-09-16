@@ -136,7 +136,7 @@ img, svg {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/inter-v20-latin-regular.woff2') format('woff2');
 }
 
@@ -144,7 +144,7 @@ img, svg {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/inter-v20-latin-500.woff2') format('woff2');
 }
 
@@ -152,7 +152,7 @@ img, svg {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/inter-v20-latin-600.woff2') format('woff2');
 }
 
@@ -160,7 +160,7 @@ img, svg {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/inter-v20-latin-700.woff2') format('woff2');
 }
 
