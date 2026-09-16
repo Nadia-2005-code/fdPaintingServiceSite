@@ -87,11 +87,11 @@ const galleryItems = Object.entries(imageFiles).map(([filepath, module]) => {
                 src={item.image}
                 alt={item.alt}
                 width={650}
-                quality={index < 3 ? "80" : "60"}
-                format={index < 3 ? "webp" : "avif"}
-                loading={index < 3 ? "eager" : "lazy"}
-                decoding={index < 3 ? "sync" : "async"}
-                fetchpriority={index < 3 ? "high" : "auto"}
+                quality={index < 1 ? 80 : 60}
+                format={index < 7 ? "webp" : "avif"}
+                loading={index < 7 ? "eager" : "lazy"}
+              decoding={index < 7 ? "sync" : "async"}
+                fetchpriority={index === 0 ? "high" : index < 7 ? "low" : undefined}
                 class="gallery-img"
               />
             </div>
