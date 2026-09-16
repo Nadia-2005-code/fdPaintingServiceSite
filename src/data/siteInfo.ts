@@ -5,8 +5,9 @@ export const siteInfo = {
   socials: {
     instagram: "https://instagram.com/fandbpaintingdecorating",
     facebook: "https://facebook.com/fandbpaintingdecorating",
-    nextdoor: "https://nextdoor.co.uk",
+    nextdoor: "https://nextdoor.co.uk/page/fb-painting-decorating-services/",
     myjobquote: "https://myjobquote.co.uk",
+    google: "https://g.page/r/"
   },
   coverage: ["Wirral", "Liverpool", "Chester", "Ellesmere Port"],
 };
